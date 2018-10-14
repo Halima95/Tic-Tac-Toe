@@ -1,0 +1,139 @@
+h1 {
+
+text-align: center;
+font-family: 'Courier New', Courier, monospace;
+margin: 0 auto;
+color:rgb(248, 213, 109);
+font-size: 40px;
+}
+table{
+    border-collapse: collapse;
+    border-style: hidden;
+    margin-left: 400px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-top: 50px;
+
+}
+   
+    td{
+        border: 3px solid purple;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    color: aliceblue;
+    font-size: 100px;
+    font-family:Chalkduster, fantasy ;
+    }
+
+
+/* .container {
+
+    top: 200px;
+    left: 50px;
+    right: 10px;
+    text-align: center;
+    margin-top: 150px;
+   display: block;
+   position: relative;
+   margin: 0%;
+  } */
+  /* .container-1{
+      height: 100px;
+      
+  }
+  .container-2{
+      height: 100px;
+  } */
+  
+  /* .box {
+    width: 100px;
+    height: 100px;
+    border: solid purple;
+    margin: 20px;
+    display: inline-block;
+    transition: 0.5s all;
+    color: antiquewhite;
+    size: 30px;} */
+/* 
+
+
+  }
+  #box-9 {
+
+    display: flex;
+    position: relative;
+    top : 300px;
+    right: 440px;
+    
+  }
+
+  #box-8{
+    display: flex;
+    position: relative;
+    top : 300px;
+    right: 400px;
+
+  }
+  #box-7 {
+
+    display: flex;
+    position: relative;
+    top : 300px;
+    right: 355px;
+    
+  }
+
+  #box-6 {
+
+    display: flex;
+    position: relative;
+    top : 200px;
+    right: 2px;
+    
+  }
+  #box-5 {
+
+    display: flex;
+    position: relative;
+    top : 200px;
+    left: 41px;
+    
+  }
+
+  #box-4 {
+
+    display: flex;
+    position: relative;
+    top : 200px;
+    left: 82px;
+    
+  }
+  #box-3 {
+
+    display: flex;
+    position: relative;
+    top : 95px;
+    left: 436px;
+    
+  }
+
+  #box-2 {
+
+    display: flex;
+    position: relative;
+    top : 95px;
+    left: 478px;
+    
+  }
+
+  #box-1 {
+
+    display: flex;
+    position: relative;
+    top : 95px;
+    left: 520px;
+    
+  }
+
+  */
