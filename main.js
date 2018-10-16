@@ -1,138 +1,135 @@
-// var game = {
-//     user: '',
-//     computer: '',
-//     currentPlayer: '',
-//     moves: 1,
-// };
+// The user choose the char. , i will assign the img as X and O 
+//  if the user choose joey img that will = X
+//  if the user choose Phepee img that will = O
+//  will start the game
+//  it is always start with Phoebe.!
+// filled cell!
 
-// function setFig(id) {
-//     if (id === 'x') {
-//         game.user = '<span class="fa fa-times"></span>';
-//         game.computer = '<span class="fa fa-circle-o"></span>';
-//     } else if (id === 'o') {
-//         game.user = '<span class="fa fa-circle-o"></span>';
-//         game.computer = '<span class="fa fa-times"></span>';
-//     }
-//     firstMove();
-//     setCurrPl('user');
-// }
-// function firstMove() {
-//     $('#fifth').html(game.computer);
-//     $('#fifth').removeAttr('onClick');
-// }
-// function setCurrPl(curr) {
-//     game.currentPlayer = curr;
-// }
-// function icon(id) {
-//     if (game.currentPlayer == 'user') {
-//         $('#' + id).html(game.user);
-//         $('#' + id).removeAttr('onClick');
-//         gameStatus();
-//         setCurrPl('computer');
-//     } else if (game.currentPlayer == 'computer') {
-//         $('#' + id).html(game.computer);
-//         $('#' + id).removeAttr('onClick');
-//         gameStatus();
-//         setCurrPl('user');
-//     }
-//     game.moves++;
-//     draw();
 
-//     if (game.currentPlayer == 'computer') {
-//         comp();
-//     }
-// }
-// function comp() {
-//     switch (true) {
-//         case $('#first').html() != game.user && $('#first').html() != game.computer:
-//             icon('first');
-//             break;
-//         case $('#second').html() !== game.user && $('#second').html() !== game.computer:
-//             icon('second');
-//             break;
-//         case $('#third').html() !== game.user && $('#third').html() !== game.computer:
-//             icon('third');
-//             break;
-//         case $('#fourth').html() !== game.user && $('#fourth').html() !== game.computer:
-//             icon('fourth');
-//             break;
-//         case $('#fifth').html() !== game.user && $('#fifth').html() !== game.computer:
-//             icon('fifth');
-//             break;
-//         case $('#sixth').html() !== game.user && $('#sixth').html() !== game.computer:
-//             icon('sixth');
-//             break;
-//         case $('#seventh').html() !== game.user && $('#seventh').html() !== game.computer:
-//             icon('seventh');
-//             break;
-//         case $('#eight').html() !== game.user && $('#eight').html() !== game.computer:
-//             icon('eight');
-//             break;
-//         case $('nineth').html() !== game.user && $('#nineth').html() !== game.computer:
-//             icon('nineth');
-//             break;
-//     }
-// };
-// function gameStatus() {
-//     var curPlayer;
 
-//     if (game.currentPlayer == 'user') {
-//         curPlayer = game.user;
-//     } else if (game.currentPlayer == 'computer') {
-//         curPlayer = game.computer;
-//     }
 
-//     switch (true) {
-//         case $('#first').html() === curPlayer && $('#second').html() === curPlayer &&
-//             $('#third').html() === curPlayer:
-//             show('#first', '#second', '#third');
-//             break;
-//         case $('#fourth').html() === curPlayer && $('#fifth').html() === curPlayer &&
-//             $('#sixth').html() === curPlayer:
-//             show('#fourth', '#fifth', '#sixth');
-//             break;
-//         case $('#seventh').html() === curPlayer && $('#eight').html() === curPlayer &&
-//             $('#nineth').html() === curPlayer:
-//             show('#seventh', '#eight', '#nineth');
-//             break;
-//         case $('#first').html() === curPlayer && $('#fourth').html() === curPlayer &&
-//             $('#seventh').html() === curPlayer:
-//             show('#first', '#fourth', '#seventh');
-//             break;
-//         case $('#second').html() === curPlayer && $('#fifth').html() === curPlayer &&
-//             $('#eight').html() === curPlayer:
-//             show('#second', '#fifth', '#eight');
-//             break;
-//         case $('#third').html() === curPlayer && $('#sixth').html() === curPlayer &&
-//             $('#nineth').html() === curPlayer:
-//             show('#third', '#sixth', '#nineth');
-//             break;
-//         case $('#first').html() === curPlayer && $('#fifth').html() === curPlayer &&
-//             $('#nineth').html() === curPlayer:
-//             show('#first', '#fifth', '#nineth');
-//             break;
-//         case $('#third').html() === curPlayer && $('#fifth').html() === curPlayer &&
-//             $('#seventh').html() === curPlayer:
-//             show('#third', '#fifth', '#seventh');
-//             break;
-//         default:
-//             draw();
-//     }
-// };
-// function show(x, y, z) {
-//     var x = $(x),
-//         y = $(y),
-//         z = $(z);
-//     x.addClass('win');
-//     y.addClass('win');
-//     z.addClass('win');
-//     lockAll();
-//     setTimeout(reset, 1500);
-// }
-// function reset() {
-//     $('.game-field').html('');
-//     game.moves = 1;
-//     $('.game-field').attr('onClick', 'icon(this.id)');
-//     $('.win').removeClass('win');
-//     setTimeout(firstMove, 200);
-// }
+
+$(document).ready(function () {
+
+    var turn = 0;
+    var player1;
+    var player2;
+
+    var cellOne = $("#1");
+    var cellTwo = $("#2");
+    var cellThree = $("#3");
+    var cellFour = $("#4");
+    var cellFive = $("#5");
+    var cellSix = $("#6");
+    var cellSeven = $("#7");
+    var celleight = $("#8");
+    var cellNine = $("#9");
+
+    // var cells = $(".cell");
+
+    $(".X").click(function x() {
+        player1 = 0;
+        player2 = 1;
+        console.log(player1);
+        // turn++
+        // debugger;
+
+    });
+    $(".O").click(function o() {
+        player1 = 1;
+        player2 = 0;
+
+        console.log(player1);
+        // console.log("O");
+        // turn++
+    });
+
+    $(".cell").on("click", function (event) {
+        $(this).unbind("mouseout");
+
+        if (turn % 2 === 0) {
+            $(this).addClass("Phoebe");
+
+            $(this).addClass("disable")
+            turn++
+
+        } else if (turn % 2 !== 0) {
+            $(this).addClass("joey");
+
+            $(this).addClass("disable")
+            turn++;
+
+        }
+
+
+        window.setTimeout(function () {
+            checkForWinner();
+        }, 100);
+    });
+
+    // $("td").click(function () {
+    //     if (player1 === 1) {
+    //         $(this).addClass("joey");
+    //     }
+    //     else {
+
+    //         $(this).addClass("Phoebe");
+    //     }
+    //     window.setTimeout(function () {
+    //         checkForWinner();
+    //     }, 100);
+    // });
+    function checkForWinner() {
+
+        if (cellOne.hasClass("joey") && cellTwo.hasClass("joey") && cellThree.hasClass("joey")
+            || cellFour.hasClass("joey") && cellFive.hasClass("joey") && cellSix.hasClass("joey")
+            || cellSeven.hasClass("joey") && celleight.hasClass("joey") && cellNine.hasClass("joey")
+            || cellOne.hasClass("joey") && cellFour.hasClass("joey") && cellSeven.hasClass("joey") || cellTwo.hasClass("joey") && cellFive.hasClass("joey") && celleight.hasClass("joey")
+            || cellThree.hasClass("joey") && cellSix.hasClass("joey") && cellNine.hasClass("joey")
+            || cellOne.hasClass("joey") && cellFive.hasClass("joey") && cellNine.hasClass("joey")
+            || cellThree.hasClass("joey") && cellFive.hasClass("joey") && cellSeven.hasClass("joey")) {
+
+            swal({
+                title: "Good job!",
+                icon: "image/howyoudoin.jpg",
+            });
+            window.setTimeout(function () {
+                location.reload();
+            }, 2200);
+
+
+        }
+        else if (cellOne.hasClass("Phoebe") && cellTwo.hasClass("Phoebe") && cellThree.hasClass("Phoebe")
+            || cellFour.hasClass("Phoebe") && cellFive.hasClass("Phoebe") && cellSix.hasClass("Phoebe")
+            || cellSeven.hasClass("Phoebe") && celleight.hasClass("Phoebe") && cellNine.hasClass("Phoebe")
+            || cellOne.hasClass("Phoebe") && cellFour.hasClass("Phoebe") && cellSeven.hasClass("Phoebe") || cellTwo.hasClass("Phoebe") && cellFive.hasClass("Phoebe") && celleight.hasClass("Phoebe")
+            || cellThree.hasClass("Phoebe") && cellSix.hasClass("Phoebe") && cellNine.hasClass("Phoebe")
+            || cellOne.hasClass("Phoebe") && cellFive.hasClass("Phoebe") && cellNine.hasClass("Phoebe")
+            || cellThree.hasClass("Phoebe") && cellFive.hasClass("Phoebe") && cellSeven.hasClass("Phoebe")) {
+            swal({
+                title: "I am the winner!",
+                icon: "image/happy.phep.jpg",
+
+            });
+
+
+            window.setTimeout(function () {
+                location.reload();
+            }, 2200);
+        }
+        else if (turn === 9) {
+
+            swal({
+                title: "No body wins!",
+                icon: "image/sad.jpg",
+            });
+            turns = 0;
+        }
+    }
+
+
+    $(".button1").click(function () {
+
+        location.reload();
+    });
+});
