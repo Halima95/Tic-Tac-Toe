@@ -67,7 +67,8 @@ $(document).ready(function () {
             || cellThree.hasClass("joey") && cellSix.hasClass("joey") && cellNine.hasClass("joey")
             || cellOne.hasClass("joey") && cellFive.hasClass("joey") && cellNine.hasClass("joey")
             || cellThree.hasClass("joey") && cellFive.hasClass("joey") && cellSeven.hasClass("joey")) {
-            // $("#How").get(0).play();
+            $("#startSong").get(0).pause();
+            $("#How").get(0).play();
             swal({
                 title: "How you doin?",
                 icon: "image/howyoudoin.jpg",
