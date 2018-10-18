@@ -1,20 +1,11 @@
-// The user choose the char. , i will assign the img as X and O 
-//  if the user choose joey img that will = X
-//  if the user choose Phepee img that will = O
-//  will start the game
-//  it is always start with Phoebe.!
-// filled cell!
-
-
-
-
 
 $(document).ready(function () {
-
+    // Declare variables.
     var turn = 0;
+    var player;
     var player1;
     var player2;
-
+    // Assigns the "td" into variables to use it for checkForWinner function.
     var cellOne = $("#1");
     var cellTwo = $("#2");
     var cellThree = $("#3");
@@ -24,61 +15,49 @@ $(document).ready(function () {
     var cellSeven = $("#7");
     var celleight = $("#8");
     var cellNine = $("#9");
-
     // var cells = $(".cell");
 
+    // Make the images clickable to choose the character.
+    //  If the user choose one of these images all the images will be unclickable.
     $(".X").click(function x() {
-        player1 = 0;
-        player2 = 1;
-        console.log(player1);
-        // turn++
-        // debugger;
-
+        player = 0;
+        $("#startSong").get(0).play();
+        $("img").off("click");
     });
     $(".O").click(function o() {
-        player1 = 1;
-        player2 = 0;
+        player = 1;
+        $("#startSong").get(0).play();
 
-        console.log(player1);
-        // console.log("O");
-        // turn++
+        $("img").off("click");
     });
 
+    // 
     $(".cell").on("click", function (event) {
+
         $(this).unbind("mouseout");
 
-        if (turn % 2 === 0) {
+        if (player % 2 === 0) {
             $(this).addClass("Phoebe");
 
-            $(this).addClass("disable")
-            turn++
-
-        } else if (turn % 2 !== 0) {
-            $(this).addClass("joey");
-
-            $(this).addClass("disable")
+            $(this).off("click");
+            player++;
             turn++;
 
         }
+        else if (player % 2 !== 0) {
+            $(this).addClass("joey");
 
-
+            $(this).off("click");
+            player++;
+            turn++;
+        }
         window.setTimeout(function () {
             checkForWinner();
         }, 100);
     });
 
-    // $("td").click(function () {
-    //     if (player1 === 1) {
-    //         $(this).addClass("joey");
-    //     }
-    //     else {
-
-    //         $(this).addClass("Phoebe");
-    //     }
-    //     window.setTimeout(function () {
-    //         checkForWinner();
-    //     }, 100);
-    // });
+    // This function will check all the possiablitty of winning.
+    // The function will shows an alert if there is a winner.
     function checkForWinner() {
 
         if (cellOne.hasClass("joey") && cellTwo.hasClass("joey") && cellThree.hasClass("joey")
@@ -88,14 +67,15 @@ $(document).ready(function () {
             || cellThree.hasClass("joey") && cellSix.hasClass("joey") && cellNine.hasClass("joey")
             || cellOne.hasClass("joey") && cellFive.hasClass("joey") && cellNine.hasClass("joey")
             || cellThree.hasClass("joey") && cellFive.hasClass("joey") && cellSeven.hasClass("joey")) {
-
+            $("#How").get(0).play();
             swal({
-                title: "Good job!",
+                title: "How you doin?",
                 icon: "image/howyoudoin.jpg",
+
             });
             window.setTimeout(function () {
                 location.reload();
-            }, 2200);
+            }, 2500);
 
 
         }
@@ -115,8 +95,9 @@ $(document).ready(function () {
 
             window.setTimeout(function () {
                 location.reload();
-            }, 2200);
+            }, 2500);
         }
+        // This function will shows an alert if we have a tie game.
         else if (turn === 9) {
 
             swal({
@@ -125,8 +106,11 @@ $(document).ready(function () {
             });
             turns = 0;
         }
-    }
 
+
+
+    }
+    // reload the page.
 
     $(".button1").click(function () {
 

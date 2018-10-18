@@ -30,10 +30,9 @@ text-align: center;
 font-family: cursive;
 margin: 0 auto;
 color:white;
-/* rgb(248, 213, 109); */
 font-size: 70px;
-position: relative;
-left: 360px;
+position: absolute; 
+left: 800px;
 top: 200px;
  
 }
@@ -47,8 +46,8 @@ top: 200px;
     text-decoration: none;
     display: inline-block;
     font-size: 25px;
-    position: relative;
-    top: 350px;
+    position: absolute;
+    top: 450px;
     left: 1120px;
     border-radius: 20%; 
     font-family: cursive;
@@ -69,18 +68,19 @@ text-align: center;
 font-family: cursive;
 margin: 0 auto;
 color:white;
-/* rgb(248, 213, 109); */
 font-size: 45px;
-position: relative;
-left: 260px;
+position: absolute;
+left: 660px;
+
 }
 
 table{
     border-collapse: collapse;
     border-style: hidden;
     margin: 0 auto;
-    position: relative;
-    left: 220px;
+    position: absolute;
+    top: 240px;
+    left: 640px;
 
 }
 .container{
@@ -111,7 +111,7 @@ position: relative;
   width: 120px;
   border-radius: 50%;
  position: relative;
- top: 250px;
+ top: 350px;
  left: 1050px;
 }
 
@@ -119,7 +119,7 @@ position: relative;
   width:170px;
   border-radius: 50%;
   position: relative;
-  top: 50px;
+  top: 150px;
  left: 900px;
 }
 .joey{
@@ -142,7 +142,7 @@ position: relative;
     display: inline-block;
     font-size: 25px;
     position: relative;
-    bottom: 200px;
+    top: 450px;
     left: 1300px;
     border-radius: 20%; 
     font-family: cursive;
