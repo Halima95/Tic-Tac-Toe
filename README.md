@@ -30,7 +30,7 @@
 - [Animate.CSS](https://daneden.github.io/animate.css/).
 - [SweetAlert](https://sweetalert.js.org/guides/).
 - [W3Schools](https://www.w3schools.com/).
-- And special thanks to my Graet Instructors (__Jack__ , __Trevor__ and __Moath__). 
+- And special thanks to my Great Instructors (__Jack__ , __Trevor__ and __Moath__). 
 
 
 
