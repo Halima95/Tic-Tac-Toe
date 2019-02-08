@@ -1,4 +1,4 @@
-# *Friends* Tic-Tac-Toe.
+# Friends Tic-Tac-Toe.
 
 ![friends logo](image/logo.jpg)
 
